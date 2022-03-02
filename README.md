@@ -1,1 +1,1 @@
-# ISMT-Dynamic
+# Dect-Dynamic
