@@ -25,25 +25,9 @@ async def OCommittee():
              "https://www.googleapis.com/auth/drive"]
     credentials = ServiceAccountCredentials.from_json_keyfile_name('static/key/api.json', scope)
     client = gspread.authorize(credentials)
-    sheet = client.open_by_key("1jGMF0OBt8x20C8eLX9u6Qx8sADyy870kLyxE0HO_U2g").sheet1
+    sheet = client.open_by_key("1dwaVH1U5LsX3sUqwzfUEvWYa38m3mjB3d9Leeuod1gY").sheet1
     # --------------------------------------------------------------------------------------
     x = sheet.col_values(1)
-    return x
-
-
-@app.get("/steering")
-async def SCommittee():
-    # --------------------------------------------------------------------------------------
-    # SHEET SETUP
-    scope = ["https://spreadsheets.google.com/feeds",
-             "https://www.googleapis.com/auth/spreadsheets",
-             "https://www.googleapis.com/auth/drive.file",
-             "https://www.googleapis.com/auth/drive"]
-    credentials = ServiceAccountCredentials.from_json_keyfile_name('static/key/api.json', scope)
-    client = gspread.authorize(credentials)
-    sheet = client.open_by_key("1jGMF0OBt8x20C8eLX9u6Qx8sADyy870kLyxE0HO_U2g").sheet1
-    # --------------------------------------------------------------------------------------
-    x = sheet.col_values(2)
     return x
 
 
@@ -57,7 +41,22 @@ async def ICommittee():
              "https://www.googleapis.com/auth/drive"]
     credentials = ServiceAccountCredentials.from_json_keyfile_name('static/key/api.json', scope)
     client = gspread.authorize(credentials)
-    sheet = client.open_by_key("1jGMF0OBt8x20C8eLX9u6Qx8sADyy870kLyxE0HO_U2g").sheet1
+    sheet = client.open_by_key("1dwaVH1U5LsX3sUqwzfUEvWYa38m3mjB3d9Leeuod1gY").sheet1
+    # --------------------------------------------------------------------------------------
+    x = sheet.col_values(2)
+    return x
+
+@app.get("/national")
+async def NCommittee():
+    # --------------------------------------------------------------------------------------
+    # SHEET SETUP
+    scope = ["https://spreadsheets.google.com/feeds",
+             "https://www.googleapis.com/auth/spreadsheets",
+             "https://www.googleapis.com/auth/drive.file",
+             "https://www.googleapis.com/auth/drive"]
+    credentials = ServiceAccountCredentials.from_json_keyfile_name('static/key/api.json', scope)
+    client = gspread.authorize(credentials)
+    sheet = client.open_by_key("1dwaVH1U5LsX3sUqwzfUEvWYa38m3mjB3d9Leeuod1gY").sheet1
     # --------------------------------------------------------------------------------------
     x = sheet.col_values(3)
     return x
@@ -72,22 +71,9 @@ async def TCommittee():
              "https://www.googleapis.com/auth/drive"]
     credentials = ServiceAccountCredentials.from_json_keyfile_name('static/key/api.json', scope)
     client = gspread.authorize(credentials)
-    sheet = client.open_by_key("1jGMF0OBt8x20C8eLX9u6Qx8sADyy870kLyxE0HO_U2g").sheet1
-    # --------------------------------------------------------------------------------------
-    x = sheet.col_values(5)
-    return x
-
-@app.get("/national")
-async def NCommittee():
-    # --------------------------------------------------------------------------------------
-    # SHEET SETUP
-    scope = ["https://spreadsheets.google.com/feeds",
-             "https://www.googleapis.com/auth/spreadsheets",
-             "https://www.googleapis.com/auth/drive.file",
-             "https://www.googleapis.com/auth/drive"]
-    credentials = ServiceAccountCredentials.from_json_keyfile_name('static/key/api.json', scope)
-    client = gspread.authorize(credentials)
-    sheet = client.open_by_key("1jGMF0OBt8x20C8eLX9u6Qx8sADyy870kLyxE0HO_U2g").sheet1
+    sheet = client.open_by_key("1dwaVH1U5LsX3sUqwzfUEvWYa38m3mjB3d9Leeuod1gY").sheet1
     # --------------------------------------------------------------------------------------
     x = sheet.col_values(4)
     return x
+
+
